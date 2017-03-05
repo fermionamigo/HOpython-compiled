@@ -49,6 +49,6 @@ print 'add_int_array', out[0], out[1], out[2]
 n=C.c_int(2)
 par1 = (C.c_float*2) (0,1)
 par2 = (C.c_float*2) (1,0)
-out = C.c_float()
-mate.dot_product(C.byref(v1),C.byref(v2),out)
+math.dot_product.restype = C.float
+mate.dot_product(C.byref(v1),C.byref(v2),n)
 print 'dot_product',out.value
