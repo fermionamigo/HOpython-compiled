@@ -37,10 +37,18 @@ print 'add_int_ref', res.value
 print 'type add_int_ref',res
 
 # Suma de arrays con una funcion de C.
-n=C.cint(2)
+n=C.c_int(2)
 par1 = (C.c_int*2) (0,1)
 par2 = (C.c_int*2) (1,0)
 out = (C.c_int*2) ()
-math.add_int_array(C.byref(par1),C.byref(par2),C.byref(out),n)
+mate.add_int_array(C.byref(par1),C.byref(par2),C.byref(out),n)
 
 print 'add_int_array', out[0], out[1], out[2]
+
+#Multiplicacion escalar
+n=C.c_int(2)
+par1 = (C.c_float*2) (0,1)
+par2 = (C.c_float*2) (1,0)
+out = C.c_float()
+mate.dot_product(C.byref(v1),C.byref(v2),out)
+print 'dot_product',out.value
